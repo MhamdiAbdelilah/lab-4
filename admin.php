@@ -1,5 +1,7 @@
 <?php
-if ($_COOKIE['Admin'] !== 'true') {
+session_start();
+
+if (!isset($_SESSION['Admin']) || $_SESSION['Admin'] !== true) {
   echo "Access Denied.";
   exit;
 }
